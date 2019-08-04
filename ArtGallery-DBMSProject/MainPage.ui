@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>804</width>
+    <height>577</height>
+   </rect>
+  </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Art Gallery Management System</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(176, 0, 255, 255), stop:1 rgba(255, 255, 255, 255))
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>130</y>
+      <width>81</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Serif</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Hello!</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>804</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArt">
+    <property name="title">
+     <string>Artists</string>
+    </property>
+    <addaction name="actionAdd_Record"/>
+    <addaction name="actionRemove_Artist"/>
+    <addaction name="actionUpdate_Info"/>
+    <addaction name="separator"/>
+    <addaction name="actionView_All"/>
+   </widget>
+   <widget class="QMenu" name="menuArt_2">
+    <property name="title">
+     <string>Art Works</string>
+    </property>
+    <addaction name="actionAdd_Art_Work"/>
+    <addaction name="actionRemove_Sold_Out_Arts"/>
+    <addaction name="actionUpdate_Info_2"/>
+    <addaction name="separator"/>
+    <addaction name="actionView_All_2"/>
+   </widget>
+   <widget class="QMenu" name="menuExhibitions">
+    <property name="title">
+     <string>Exhibitions</string>
+    </property>
+    <addaction name="actionAdd_Exhibition"/>
+    <addaction name="actionRemove_Exhibition"/>
+    <addaction name="actionUpdate_details"/>
+    <addaction name="separator"/>
+    <addaction name="actionView_All_3"/>
+   </widget>
+   <widget class="QMenu" name="menuCustomers">
+    <property name="title">
+     <string>Customers</string>
+    </property>
+    <addaction name="actionAdd_Customer"/>
+    <addaction name="actionRemove_Customer"/>
+    <addaction name="actionUpdate_Customer"/>
+    <addaction name="separator"/>
+    <addaction name="actionView_All_4"/>
+   </widget>
+   <widget class="QMenu" name="menuTransactions">
+    <property name="title">
+     <string>Transactions</string>
+    </property>
+    <addaction name="actionView_Past_Transactions"/>
+   </widget>
+   <widget class="QMenu" name="menuArtist_of_the_Month">
+    <property name="title">
+     <string>Artist of the Month</string>
+    </property>
+    <addaction name="actionView"/>
+   </widget>
+   <widget class="QMenu" name="menuBill_Retrieval">
+    <property name="title">
+     <string>Bill Retrieval</string>
+    </property>
+    <addaction name="actionSearch_Bill"/>
+   </widget>
+   <addaction name="menuArt"/>
+   <addaction name="menuArt_2"/>
+   <addaction name="menuExhibitions"/>
+   <addaction name="menuCustomers"/>
+   <addaction name="menuTransactions"/>
+   <addaction name="menuArtist_of_the_Month"/>
+   <addaction name="menuBill_Retrieval"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAdd_Record">
+   <property name="text">
+    <string>Add Artist</string>
+   </property>
+  </action>
+  <action name="actionRemove_Artist">
+   <property name="text">
+    <string>Remove Artist</string>
+   </property>
+  </action>
+  <action name="actionUpdate_Info">
+   <property name="text">
+    <string>Update Info.</string>
+   </property>
+  </action>
+  <action name="actionView_All">
+   <property name="text">
+    <string>View All</string>
+   </property>
+  </action>
+  <action name="actionAdd_Art_Work">
+   <property name="text">
+    <string>Add Art Work</string>
+   </property>
+  </action>
+  <action name="actionRemove_Art_Work">
+   <property name="text">
+    <string>Remove Art Work</string>
+   </property>
+  </action>
+  <action name="actionRemove_Sold_Out_Arts">
+   <property name="text">
+    <string>Remove Sold Out Arts</string>
+   </property>
+  </action>
+  <action name="actionUpdate_Info_2">
+   <property name="text">
+    <string>Update Info.</string>
+   </property>
+  </action>
+  <action name="actionView_All_2">
+   <property name="text">
+    <string>View All</string>
+   </property>
+  </action>
+  <action name="actionAdd_Exhibition">
+   <property name="text">
+    <string>Add Exhibition</string>
+   </property>
+  </action>
+  <action name="actionRemove_Exhibition">
+   <property name="text">
+    <string>Remove Exhibition</string>
+   </property>
+  </action>
+  <action name="actionUpdate_details">
+   <property name="text">
+    <string>Update details</string>
+   </property>
+  </action>
+  <action name="actionView_All_3">
+   <property name="text">
+    <string>View All</string>
+   </property>
+  </action>
+  <action name="actionAdd_Customer">
+   <property name="text">
+    <string>Add Customer </string>
+   </property>
+  </action>
+  <action name="actionRemove_Customer">
+   <property name="text">
+    <string>Remove Customer</string>
+   </property>
+  </action>
+  <action name="actionUpdate_Customer">
+   <property name="text">
+    <string>Update Customer</string>
+   </property>
+  </action>
+  <action name="actionView_All_4">
+   <property name="text">
+    <string>View All</string>
+   </property>
+  </action>
+  <action name="actionView">
+   <property name="text">
+    <string>View</string>
+   </property>
+  </action>
+  <action name="actionView_Past_Transactions">
+   <property name="text">
+    <string>View Past Transactions</string>
+   </property>
+  </action>
+  <action name="actionSearch_Bill">
+   <property name="text">
+    <string>Search Bill</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="C:/Users/dell/Desktop/hi.qrc"/>
+ </resources>
+ <connections/>
+</ui>

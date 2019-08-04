@@ -1,0 +1,55 @@
+import sqlite3
+def createTables():
+
+    connection = sqlite3.connect('AllTables.db')
+    #######################################################################################################################
+    connection.execute("CREATE TABLE Artists(MemId INTEGER NOT NULL PRIMARY KEY, FullName TEXT NOT NULL, Pincode NUMBER NOT NULL,PhNo NUMBER NOT NULL)")
+    connection.execute("INSERT INTO Artists VALUES(101, 'Robert Gills', '600061', 9792342545)")
+    connection.execute("INSERT INTO Artists VALUES(102, 'Jack Jhonson', '600036', 9863552545)")
+    connection.execute("INSERT INTO Artists VALUES(103, 'Roshini Gourav', '625706', 9734266937)")
+    connection.execute("INSERT INTO Artists VALUES(104, 'Sally Sanders', '600019', 9240778485)")
+    connection.execute("INSERT INTO Artists VALUES(105, 'Darrell Rivers', '132113', 552247092)")
+    connection.execute("INSERT INTO Artists VALUES(106, 'Meena Patel', '825408', 8242147092)")
+    connection.execute("INSERT INTO Artists VALUES(107, 'Neeti Rakesh', '110002', 9249247092)")
+    #######################################################################################################################
+    connection.execute("CREATE TABLE Artworks(ArtId INTEGER NOT NULL PRIMARY KEY, Title TEXT NOT NULL, Genre TEXT NOT NULL, MemId NUMBER NOT NULL, Price FLOAT NOT NULL)")
+    connection.execute("INSERT INTO Artworks VALUES(1001, 'Taj Mahal', 'Oil Painting', 101, 7000)")
+    connection.execute("INSERT INTO Artworks VALUES(1002, 'Dance', 'Oil Painting', 102, 9000)")
+    connection.execute("INSERT INTO Artworks VALUES(1003, 'The Mind', 'Abstract Art', 103, 10000)")
+    connection.execute("INSERT INTO Artworks VALUES(1004, 'Rainy season', 'Dot Art', 102, 8500)")
+    connection.execute("INSERT INTO Artworks VALUES(1005, 'Rainbow', 'Dot Art', 104, 9000)")
+    connection.execute("INSERT INTO Artworks VALUES(1006, 'Mysteries', 'Abstract Art', 105, 10000)")
+    connection.execute("INSERT INTO Artworks VALUES(1007, 'Waterfalls', '3D Art', 106, 6700)")
+    connection.execute("INSERT INTO Artworks VALUES(1008, 'Surfing', 'Wax Painting', 105, 8900)")
+    #######################################################################################################################
+    connection.execute("CREATE TABLE Exhibitions(ExCount INTEGER NOT NULL PRIMARY KEY, Theme TEXT NOT NULL, Pincode NUMBER NOT NULL,PhNo NUMBER NOT NULL, FromDate TEXT NOT NULL, ToDate TEXT NOT NULL)")
+    connection.execute("INSERT INTO Exhibitions VALUES(820, 'Tiny Art', '600061', 9799132545, '2018-02-23', '2018-02-27')")
+    connection.execute("INSERT INTO Exhibitions VALUES(821, '3D Art', '600081', 9863142545,'2018-04-26','2018-04-28')")
+    connection.execute("INSERT INTO Exhibitions VALUES(822, 'Famous Landmarks', '600038', 9799112937,'2018-05-26','2018-05-28')")
+    connection.execute("INSERT INTO Exhibitions VALUES(823, 'Local Inspiration', '600019', 9240238485,'2018-06-26','2018-06-29')")
+    connection.execute("INSERT INTO Exhibitions VALUES(824, 'Infinity', '600045', 649247092,'2018-08-23','2018-08-27')")
+    connection.execute("INSERT INTO Exhibitions VALUES(825, 'Universe', '603210', 8249247092,'2018-10-20','2018-10-23')")
+    connection.execute("INSERT INTO Exhibitions VALUES(826, 'Bio Diversity', '603210', 1249247092,'2018-11-24','2018-11-28')")
+    #######################################################################################################################
+    connection.execute("CREATE TABLE Customers(Cid INTEGER NOT NULL PRIMARY KEY, CName TEXT NOT NULL, Pincode NUMBER NOT NULL,PhNo NUMBER NOT NULL)")
+    connection.execute("INSERT INTO Customers VALUES(1201, 'Raghu Ram', '600061', 9792672545)")
+    connection.execute("INSERT INTO Customers VALUES(1202, 'Jeffrey Ray', '610036', 9863452545)")
+    connection.execute("INSERT INTO Customers VALUES(1203, 'Jack Peters', '635706', 9711266937)")
+    connection.execute("INSERT INTO Customers VALUES(1204, 'Sanya Patel', '600019', 9243378485)")
+    connection.execute("INSERT INTO Customers VALUES(1205, 'Sanjay Suresh', '232113', 551247092)")
+    connection.execute("INSERT INTO Customers VALUES(1206, 'Meena Gautham', '625408', 8242133092)")
+    connection.execute("INSERT INTO Customers VALUES(1207, 'Rita Rakesh', '110002', 9249117092)")
+    #######################################################################################################################
+    connection.execute("CREATE TABLE Bill(BillId TEXT NOT NULL, Cid INTEGER NOT NULL, ArtId INTEGER NOT NULL, Qty INTEGER NOT NULL, PurchaseDate TEXT NOT NULL, TotalPrice FLOAT NOT NULL)")
+    connection.execute("INSERT INTO Bill VALUES('A12345',1201, 1001, 2, '2018-09-15', 21000)")
+    connection.execute("INSERT INTO Bill VALUES('A12346',1203, 1001, 1, '2018-09-15', 8000)")
+    connection.execute("INSERT INTO Bill VALUES('A12346',1203, 1002, 2, '2018-09-15', 18000)")
+    connection.execute("INSERT INTO Bill VALUES('A12347',1201, 1002, 1, '2018-06-21', 9000)")
+    connection.execute("INSERT INTO Bill VALUES('A12348',1205, 1003, 2, '2018-07-21', 19500)")
+    connection.execute("INSERT INTO Bill VALUES('A12349',1203, 1004, 1, '2018-09-18',  8500)")
+    connection.execute("INSERT INTO Bill VALUES('A12350',1207, 1005, 1, '2018-08-23', 9000)")
+    #######################################################################################################################
+    connection.commit()
+    connection.close()
+
+createTables()
